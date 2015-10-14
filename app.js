@@ -14,6 +14,7 @@
 
 		$("#userSubmit").on("click", function(event) {
 			event.preventDefault();
+			$("#noResult").html("");
 			fourSquareAPI(userSearch());
 		});
 
@@ -36,6 +37,7 @@
 		function userSearch(){
 
 				var query = $("#userQuery").val();
+				$("#userQuery").val("");
 				return query;
 			}
 
@@ -48,14 +50,21 @@
 			dataType: "jsonp",
 			type: "GET"
 			}).done(function(results){
-			console.log(results);
-			$.each(results.response.venues, function(i, venue) {
 
-				var latitude = parseFloat(venue.location.lat);
-				var longitude = parseFloat(venue.location.lng);
-				console.log(venue);
-				L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + venue.name + "</b>").openPopup();
+			if(results.response.venues.length === 0) {
+				$("#noResult").html("Sorry, no results correspond to this query.");
+			}	
+
+			else {
+
+				$.each(results.response.venues, function(i, venue) {
+
+					var latitude = parseFloat(venue.location.lat);
+					var longitude = parseFloat(venue.location.lng);
+					L.marker([latitude, longitude]).addTo(map).bindPopup("<b>" + venue.name + "</b>").openPopup();
 				})
+			}
+
 			})
 			
 			.fail(function(){console.log("Failed!");});

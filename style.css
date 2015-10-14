@@ -1,5 +1,36 @@
+body {
+	font-family:'Kaushan Script', cursive;
+	color: white;
+	background-color: #505050;
+}
+
+h4 {
+	margin-top: 10rem;
+}
+
 #map {
 	margin-top: 2rem;
-	height: 25rem;
-	width:40rem;
+	height: 60rem;
+	width: 60rem;
+	color: black;
+}
+
+#userInput {
+	margin-left: 2rem;
+	margin-right: 5rem;
+}
+
+#userInput form {
+	margin-top: 2rem;
+}
+
+#userSubmit {
+	margin-top: 1rem;
+	margin-left: 20rem;
+	font-size: 2rem;
+}
+
+#noResult {
+	margin-top: 2rem;
+	margin-left: 10rem;
 }

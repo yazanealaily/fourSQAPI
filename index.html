@@ -3,24 +3,41 @@
 
 <head>
   <meta charset="UTF-8">
-   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"/>
-   <link rel="stylesheet" href="style.css"/>
-  <title>Cool Places in Beirut</title>
+  <link href='https://fonts.googleapis.com/css?family=Great+Vibes|Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css"/>
+  <link rel="stylesheet" href="style.css"/>
+  <title>Cool Spots in Beirut</title>
 </head>
 
 <body>
-	
-	<form>
-		<input type="text" name="hashtag" id="userQuery">
-		<button type="Submit" id="userSubmit">Explore</button>
-	</form>
 
-	<div id="map">
+	<div class="row">
+		
+		<div class="col-md-5" id="userInput">
+			
+			<h1>Cool Spots in Beirut</h1>
+			<h4>Enter a keywork and see if it corresponds to a spot in the city.</h4>
+
+			<form>
+				<input type="text" name="hashtag" id="userQuery" class="form-control" id="usr">
+				<button type="Submit" id="userSubmit" class="btn-default">Explore!</button>
+			</form>
+
+			<div id="noResult">
+			</div>
+
+		</div>
+		
+		<div class="col-md-7" id="map">
+		</div>
+
 	</div>
 
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
 <script src="app.js" type="text/javascript"></script>
 
